@@ -20,7 +20,7 @@ window.addEventListener('keydown', function (e) {
     else if(e.key === "Backspace") {
         userInput.innerText = userInput.innerText.substring(0, userInput.innerText.length-1);
     }
-    else {
+    else if(e.key.length === 1) {
         userInput.innerText += e.key;
     }
 });
