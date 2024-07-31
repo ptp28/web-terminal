@@ -1,0 +1,14 @@
+{
+  "ls": {
+    "desc": "Runs the ls command",
+    "output": "Output of the ls command"
+  },
+  "cd": {
+    "desc": "Runs the cd command",
+    "output": "Output of th cd command"
+  },
+  "pwd": {
+    "desc": "Runs the pwd command",
+    "output": "Output of the pwd command"
+  }
+}
