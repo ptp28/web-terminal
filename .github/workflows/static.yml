@@ -37,8 +37,10 @@ jobs:
           node-version: 'lts/*'
       - name: Install dependencies
         run: npm install
+        working-directory: ./lib
       - name: Build project
         run: npm run build
+        working-directory: ./lib
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
