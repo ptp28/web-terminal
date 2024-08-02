@@ -1,4 +1,4 @@
-import "./terminalUI";
+import "./terminalElement.ts";
 import {initializeCommands} from './commandHandler';
 import {setupEventHandlers} from './eventHandler';
 import {terminalUI} from "./domUtils.ts";

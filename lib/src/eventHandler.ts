@@ -6,7 +6,7 @@ export function setupEventHandlers() {
     window.addEventListener('keydown', (e) => {
         switch (e.key) {
             case "Enter":
-                historyContent.innerText += `${terminalUI.getUsername()}@${terminalUI.getHostname()} % ${userInput.innerText}\n`;
+                historyContent.innerText += `${terminalUI?.getUsername()}@${terminalUI?.getHostname()} % ${userInput.innerText}\n`;
                 historyContent.innerText += `${handleCommandInput(userInput.innerText)}\n`;
                 userInput.innerText = "";
                 scrollToBottom();
