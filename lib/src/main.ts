@@ -1,15 +1,14 @@
 import "./terminalUI";
-import { initializeCommands } from './commandHandler';
-import { setupEventHandlers } from './eventHandler';
+import {initializeCommands} from './commandHandler';
+import {setupEventHandlers} from './eventHandler';
+import {terminalUI} from "./domUtils.ts";
 
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    const TerminalUI = document.querySelector('terminal-ui');
-    if (TerminalUI) {
-        // Get the file path from the attribute 'commands' and initialize commands list
-        initializeCommands(TerminalUI.getAttribute('commands'));
+    // Get the file path from the attribute 'commands' and initialize commands list
+    if(terminalUI) {
+        initializeCommands(terminalUI.getAttribute('commands'));
+        setupEventHandlers();
     }
-
-    setupEventHandlers();
 });

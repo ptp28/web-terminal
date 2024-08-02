@@ -1,5 +1,6 @@
-const terminalDOM = `
-<div id="window-frame" class="window">
+const terminalDOM = (username: string, hostname: string) => {
+    return `
+        <div id="window-frame" class="window">
     <div class="titlebar">
         <div class="titlebar-stoplight">
             <div class="titlebar-close">
@@ -26,16 +27,26 @@ const terminalDOM = `
     <div id="window-content" class="window-content">
         <div id="history" class="history"></div>
         <div class="text-input">
-            <span class="user-name">ptp@PTPs-MacBook-Pro %</span>
+            <span class="user-name">${username}@${hostname} %</span>
             <span id="user-input-text"></span>
             <div class="blinking-character">&nbsp;</div>
         </div>
     </div>
-</div>`;
+</div>
+    `;
+}
 
 class TerminalUI extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = terminalDOM;
+        this.innerHTML = terminalDOM(this.getUsername(), this.getHostname());
+    }
+
+    getUsername() {
+        return this.getAttribute('username') || 'root';
+    }
+
+    getHostname() {
+        return this.getAttribute('hostname') || window.location.hostname;
     }
 }
 
