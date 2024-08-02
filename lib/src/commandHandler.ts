@@ -18,3 +18,20 @@ export function getCommand(command: string) {
 export function getAllCommands() {
     return commandJSON;
 }
+
+export function getHelpCommandOutput() {
+    if(!commandJSON) {
+        return "";
+    }
+
+    const helpString: string[] = [];
+
+    const maxCommandLength = Object.keys(commandJSON).reduce((max: number, command: string) => Math.max(max, command.length), 0);
+
+    console.log(maxCommandLength);
+    for (const command in commandJSON) {
+        const padding = ' '.repeat(maxCommandLength - command.length);
+        helpString.push(`${command}${padding}: ${commandJSON[command].desc}`);
+    }
+    return helpString.join('\n');
+}

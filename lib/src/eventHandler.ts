@@ -1,4 +1,4 @@
-import { getCommand, getAllCommands } from './commandHandler';
+import {getCommand, getHelpCommandOutput} from './commandHandler';
 import {historyContent, scrollToBottom, userInput} from "./domUtils.ts";
 
 export function setupEventHandlers() {
@@ -7,7 +7,7 @@ export function setupEventHandlers() {
         switch (e.key) {
             case "Enter":
                 historyContent.innerText += `ptp@PTPs-MacBook-Pro % ${userInput.innerText}\n`;
-                historyContent.innerText += handleCommandInput(userInput.innerText);
+                historyContent.innerText += `${handleCommandInput(userInput.innerText)}\n`;
                 userInput.innerText = "";
                 scrollToBottom();
                 break;
@@ -29,13 +29,13 @@ export function setupEventHandlers() {
 
 function handleCommandInput(command: string) {
     if (command === "help") {
-        return `${JSON.stringify(getAllCommands(), null, 2)}\n`;
+        return getHelpCommandOutput();
     } else {
         const commandOutput = getCommand(command);
         if (commandOutput) {
-            return `${commandOutput.output}\n`;
+            return commandOutput.output;
         } else {
-            return `command not found: ${command}\n`;
+            return `command not found: ${command}`;
         }
     }
 }
