@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Embedded terminal</title>
+    <style>
+        body {
+            font-family: Space Mono, Consolas, Lucida Console, monospace;
+            font-weight: 400;
+            font-style: normal;
+            background: #333d54
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: azure">Mini terminal</h1>
+    <div style="width: 85%; height: 600px;">
+        <terminal-ui commands="demo-data.json"></terminal-ui>
+    </div>
+</body>
+<script type="module" crossorigin src="../bin/web-terminal.umd.1.0.0.js"></script>
+</html>
