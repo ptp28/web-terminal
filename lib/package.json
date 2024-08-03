@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build-github": "tsc && vite build --config vite.config.github.ts",
     "preview": "vite preview"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-copy": "^0.1.6"
   }
 }
