@@ -1,14 +1,14 @@
 {
   "ls": {
-    "desc": "Runs the ls command",
-    "output": "Output of the ls command"
+    "desc": "list directory contents",
+    "output": "file1 \n file2 \n file3 \n ..."
   },
-  "cd": {
-    "desc": "Runs the cd command",
-    "output": "Output of th cd command"
+  "whoami": {
+    "desc": "display effective user id",
+    "output": "root"
   },
-  "pwd": {
-    "desc": "Runs the pwd command",
-    "output": "Output of the pwd command"
+  "cp": {
+    "desc": "copy files",
+    "output": "www.github.com"
   }
 }
